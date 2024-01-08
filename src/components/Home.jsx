@@ -4,7 +4,7 @@ import axios from 'axios';
 import Cards from '../Common/Cards'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-let APIURL="https://jsonplaceholder.typicode.com/users"
+let APIURL="https://6598d30ca20d3dc41ceefd10.mockapi.io/v1/EmployeeCity"
 
 
 

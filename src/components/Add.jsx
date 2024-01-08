@@ -4,24 +4,11 @@ import Nav from '../Common/CommonBar'
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-let APIURL="https://jsonplaceholder.typicode.com/users"
+let APIURL="https://6598d30ca20d3dc41ceefd10.mockapi.io/v1/EmployeeCity"
 
 function Add() {
   let [data,setData]=useState([])
   let navigate = useNavigate()
-  let datas=async()=>{
-    try {
-      let data = setData
-      let value=await axios.post(APIURL,data)
-      if(value.status===201)
-      {
-        
-        navigate('/')
-      }
-    } catch (error) {
-      
-    }
-  }
   let [form,setForm]=useState({
     name: "",
     userName: "",
@@ -40,6 +27,19 @@ function Add() {
     },
     Website:""
   })
+  let datas=async()=>{
+    try {
+      let value=await axios.post(APIURL,form)
+      if(value.status===201)
+      {
+        
+        navigate('/')
+      }
+    } catch (error) {
+      
+    }
+  }
+
   let handleAdd=()=>{
     datas()
     console.log("Sucess");
@@ -50,201 +50,166 @@ function Add() {
       if(name==="name"){
         return {
           name: value,
-          userName: prevForm.userName,
+          userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="username"){
         return {
           name: prevForm.name,
           userName:value,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="phone"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: value,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
+        }
+      }
+      else if(name==="Email"){
+        return {
+          name: prevForm.name,
+          userName:prevForm.userName,
+          email:value,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
+          phone: prevForm.phone,
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="city"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:value,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:value,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website
         }
       }
       else if(name==="street"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:value,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:value,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="zipcode"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:value,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:value,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="companyName"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:value,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhraset,
+          CompanyName:value,
+          bs:prevForm.bs,
+          website:prevForm.website,
         }
       }
       else if(name==="catchPhrase"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:value,
-            bs:prevForm.company.bs
-          },
-          Website:prevForm.Website
+          CatchPhrase:value,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:prevForm.website
         }
       }
       else if(name==="bs"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:value
-          },
-          Website:prevForm.Website
+          CatchPhrase:prevForm.CatchPhrase,
+          CompanyName:prevForm.CompanyName,
+          bs:value,
+          website:prevForm.website
         }
       }
       else if(name==="website"){
         return {
           name: prevForm.name,
           userName:prevForm.userName,
+          email:prevForm.email,
+          street:prevForm.street,
+          city:prevForm.city,
+          zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          location:{
-            city:prevForm.location.city,
-            street:prevForm.location.street,
-            zipCode:prevForm.location.zipCode,
-      
-      
-          },
-          company:{
-            name:prevForm.company.name,
-            CatchPhrase:prevForm.company.CatchPhrase,
-            bs:prevForm.company.bs
-          },
-          Website:value
+          CatchPhrase:prevForm.CatchPhrase,
+          CompanyName:prevForm.CompanyName,
+          bs:prevForm.bs,
+          website:value
         }
       }
     }
@@ -272,6 +237,11 @@ function Add() {
         <Form.Label>Phone</Form.Label>
         <Form.Control name="phone"  value={form.phone} type="text" onChange={handleChange} placeholder="Enter phone number" />
       </Form.Group>
+      <Form.Group className="mb-3" >
+        <Form.Label>Email</Form.Label>
+        <Form.Control name="Email"  value={form.email} type="text" onChange={handleChange} placeholder="Enter Email" />
+      </Form.Group>
+
 
       <Form.Group className="mb-3" >
       <Form.Label>Location</Form.Label>
@@ -279,19 +249,19 @@ function Add() {
           <div>
           <Form.Group className="mb-3 " >
         <Form.Label>City</Form.Label>
-        <Form.Control name="city"  value={form.location.city}  type="text"  onChange={handleChange}placeholder="Enter city" />
+        <Form.Control name="city"  value={form.city}  type="text"  onChange={handleChange}placeholder="Enter city" />
       </Form.Group>
           </div>
           <div>
           <Form.Group className="mb-3 mx-3" >
         <Form.Label>Street</Form.Label>
-        <Form.Control name="street" value={form.location.street} type="text" onChange={handleChange} placeholder="Enter street " />
+        <Form.Control name="street" value={form.street} type="text" onChange={handleChange} placeholder="Enter street " />
       </Form.Group>
           </div>
           <div>
           <Form.Group className="mb-3 mx-3" >
         <Form.Label> Zipcode</Form.Label>
-        <Form.Control name="zipcode"  value={form.location.zipCode} type="text"  onChange={handleChange}placeholder="Enter zipcode " />
+        <Form.Control name="zipcode"  value={form.zipCode} type="text"  onChange={handleChange}placeholder="Enter zipcode " />
       </Form.Group>
           </div>
         </div>
@@ -304,19 +274,19 @@ function Add() {
           <div>
           <Form.Group className="mb-3 " >
         <Form.Label>name</Form.Label>
-        <Form.Control name="companyName" value={form.company.name} type="text"  onChange={handleChange}placeholder="Enter Company name " />
+        <Form.Control name="companyName" value={form.CompanyName} type="text"  onChange={handleChange}placeholder="Enter Company name " />
       </Form.Group>
           </div>
           <div>
           <Form.Group className="mb-3 mx-3" >
         <Form.Label>CatchPhrase</Form.Label>
-        <Form.Control name="catchPhrase" type="text" value={form.company.CatchPhrase}  onChange={handleChange}placeholder="Enter catchPhrase " />
+        <Form.Control name="catchPhrase" type="text" value={form.CatchPhrase}  onChange={handleChange}placeholder="Enter catchPhrase " />
       </Form.Group>
           </div>
           <div>
           <Form.Group className="mb-3 mx-3">
         <Form.Label>bs</Form.Label>
-        <Form.Control  name="bs" type="text" value={form.company.bs}  onChange={handleChange} placeholder="Enter bs " />
+        <Form.Control  name="bs" type="text" value={form.bs}  onChange={handleChange} placeholder="Enter bs " />
       </Form.Group>
           </div>
         </div>

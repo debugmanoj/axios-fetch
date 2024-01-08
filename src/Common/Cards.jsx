@@ -19,6 +19,7 @@ function Cards({user,name}) {
           <div>UserName - <span style={{fontWeight:"Bold"}}>{user.username}</span></div>
           <div>Phone - <span style={{fontWeight:"Bold"}}>{user.phone}</span></div>
           <div className='mb-5' >Email - <span style={{fontWeight:"Bold"}}>{user.email}</span></div>
+
           {/* <Card.Text className='mt-3'>
             <div className='d-flex mx-auto justify-content-center '>
                 <div className='mx-2' >
@@ -67,9 +68,9 @@ function Cards({user,name}) {
                   <th>Zipcode</th>
                 </tr>
                 <tr>
-                  <td>{user.address.city}</td>
-                  <td>{user.address.street}</td>
-                  <td>{user.address.zipcode}</td>
+                  <td>{user.city}</td>
+                  <td>{user.street}</td>
+                  <td>{user.zipcode}</td>
                 </tr>
               </Table>
             </Tab.Pane>
@@ -81,9 +82,9 @@ function Cards({user,name}) {
                   <th>bs</th>
                 </tr>
                 <tr>
-                  <td>{user.company.name}</td>
-                  <td>{user.company.catchPhrase}</td>
-                  <td>{user.company.bs}</td>
+                  <td>{user.CompanyName}</td>
+                  <td>{user.catchPhrase}</td>
+                  <td>{user.bs}</td>
                 </tr>
               </Table>
               </Tab.Pane>
