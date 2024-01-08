@@ -21,7 +21,7 @@ const AppRoutes=[
         element:<Add/>
     },
     {
-        path:"/edit:id",
+        path:"/edit/:id",
         exact:true,
         element:<Edit/>
     },

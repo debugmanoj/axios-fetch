@@ -9,24 +9,7 @@ let APIURL="https://6598d30ca20d3dc41ceefd10.mockapi.io/v1/EmployeeCity"
 function Add() {
   let [data,setData]=useState([])
   let navigate = useNavigate()
-  let [form,setForm]=useState({
-    name: "",
-    userName: "",
-    phone: "",
-    location:{
-      city:"",
-      street:"",
-      zipCode:"",
-
-
-    },
-    company:{
-      name:"",
-      CatchPhrase:"",
-      bs:""
-    },
-    Website:""
-  })
+  let [form,setForm]=useState([])
   let datas=async()=>{
     try {
       let value=await axios.post(APIURL,form)
@@ -50,13 +33,13 @@ function Add() {
       if(name==="name"){
         return {
           name: value,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -65,13 +48,13 @@ function Add() {
       else if(name==="username"){
         return {
           name: prevForm.name,
-          userName:value,
+          username:value,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -80,13 +63,13 @@ function Add() {
       else if(name==="phone"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: value,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -95,13 +78,13 @@ function Add() {
       else if(name==="Email"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:value,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -110,13 +93,13 @@ function Add() {
       else if(name==="city"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:value,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website
@@ -125,13 +108,13 @@ function Add() {
       else if(name==="street"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:value,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -140,13 +123,13 @@ function Add() {
       else if(name==="zipcode"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:value,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -155,13 +138,13 @@ function Add() {
       else if(name==="companyName"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhraset,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:value,
           bs:prevForm.bs,
           website:prevForm.website,
@@ -170,13 +153,13 @@ function Add() {
       else if(name==="catchPhrase"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:value,
+          catchPhrase:value,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:prevForm.website
@@ -185,13 +168,13 @@ function Add() {
       else if(name==="bs"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhrase,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:value,
           website:prevForm.website
@@ -200,13 +183,13 @@ function Add() {
       else if(name==="website"){
         return {
           name: prevForm.name,
-          userName:prevForm.userName,
+          username:prevForm.username,
           email:prevForm.email,
           street:prevForm.street,
           city:prevForm.city,
           zipcode:prevForm.zipcode,
           phone: prevForm.phone,
-          CatchPhrase:prevForm.CatchPhrase,
+          catchPhrase:prevForm.catchPhrase,
           CompanyName:prevForm.CompanyName,
           bs:prevForm.bs,
           website:value
@@ -229,7 +212,7 @@ function Add() {
       </Form.Group>
       <Form.Group className="mb-3 " >
         <Form.Label>Username</Form.Label>
-        <Form.Control name="username" value={form.userName} className='' type="text" onChange={handleChange} placeholder="Enter Username" />
+        <Form.Control name="username" value={form.username} className='' type="text" onChange={handleChange} placeholder="Enter Username" />
         
       </Form.Group>
 
@@ -280,7 +263,7 @@ function Add() {
           <div>
           <Form.Group className="mb-3 mx-3" >
         <Form.Label>CatchPhrase</Form.Label>
-        <Form.Control name="catchPhrase" type="text" value={form.CatchPhrase}  onChange={handleChange}placeholder="Enter catchPhrase " />
+        <Form.Control name="catchPhrase" type="text" value={form.catchPhrase}  onChange={handleChange}placeholder="Enter catchPhrase " />
       </Form.Group>
           </div>
           <div>
